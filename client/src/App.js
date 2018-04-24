@@ -6,14 +6,12 @@ class App extends Component {
     super(props)
     this.state = {data: []};
   }
-
   componentDidMount(){
-    axios.get('http://localhost:3000/api/bears')
+    axios.get('http://localhost:8000/api/bears')
     .then(result => {
       this.setState({data: result.data})
     })
   }
-
   render() {
     let bears = this.state.data;
     return (
@@ -25,5 +23,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;
